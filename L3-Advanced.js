@@ -1,8 +1,10 @@
 document.getElementById("myBtn").addEventListener("click", changeToRandomColor);
 document.getElementById("btnSave").addEventListener("click", saveTable);
-var colorString = "";
+document.getElementById("colorTable").style.border = "1px solid black";
+var colorString = "#ffffff";    //Color string starts as white in case user want to save immediately upon opening.
 
 function saveTable(){
+    //Creates the table elements when the user decides to save the color.
     var node1 = document.createTextNode("");
     var node2 = document.createTextNode(colorString);
     var table = document.getElementById("colorTable");
@@ -27,7 +29,7 @@ function randomColor() {
     var g = Math.floor(Math.random() * 255);   //Multiply by 255 to get a number in the correct range
     var b = Math.floor(Math.random() * 255);   //Then convert it to an int
 
-    var hexR = r.toString(16);
+    var hexR = r.toString(16);  //Converting each number to a hex number.
     var hexG = g.toString(16);
     var hexB = b.toString(16);
 
